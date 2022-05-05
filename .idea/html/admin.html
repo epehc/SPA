@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+
+  <title>Admin</title>
+</head>
+<body class="admin-content" >
+<main>
+  <section class="admin-options" id="admin">
+    <div>
+      <nav class="title-bar">
+        <label> The Imaginary University</label>
+      </nav>
+      <nav class="nav-bar">
+        <button class="nav-bar-button b1" onclick="toggleStart()">HOME</button>
+        <button class="nav-bar-button b2" onclick="toggleStudents()">STUDENTS</button>
+        <button class="nav-bar-button b3" onclick="toggleStaff()">STAFF</button>
+      </nav>
+
+    </div>
+
+    <div class="container container-options" id="container-options" >
+      <div class="info-bar info-bar-options">
+        <h2>Manage Data</h2>
+        <h4>Add, Update and Delete student and staff members</h4>
+      </div>
+
+      <div class="options">
+        <button class="options-button student" onclick="toggleStudents()">MANAGE STUDENTS</button>
+        <button class="options-button staff" onclick="toggleStaff()">MANAGE STAFF</button>
+      </div>
+    </div>
+
+    <div class="container container-student" id="container-student">
+      <div class="info-bar info-bar-student">
+        <h2>All Students</h2>
+        <div class="info-bar-buttons">
+          <button class="actions-button student-add" onclick="toggleStudentsAdd()">ADD</button>
+          <button class="actions-button student-update">UPDATE</button>
+          <button class="actions-button student-delete">DELETE</button>
+        </div>
+
+      </div>
+
+      <div class="student-list">
+        <table class="all-students" id="all-students">
+          <tr id="tr-header">
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>E-Mail</th>
+          </tr>
+          <tr>
+            <td>001</td>
+            <td>Jose</td>
+            <td>Cardona</td>
+            <td>08.03.1999</td>
+            <td>Male</td>
+            <td>Comp. Science</td>
+            <td>jose.cardona@student.htw-berlin.de</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Chepe</td>
+            <td>Sepresta</td>
+            <td>08.03.1999</td>
+            <td>Male</td>
+            <td>Comp. Science</td>
+            <td>jose.cardona@student.htw-berlin.de</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="container container-staff" id="container-staff" >
+      <div class="info-bar info-bar-staff">
+        <h2>All Staff</h2>
+        <div class="info-bar-buttons">
+          <button class="actions-button staff-add" onclick="toggleStaffAdd()">ADD</button>
+          <button class="actions-button staff-update">UPDATE</button>
+          <button class="actions-button staff-delete">DELETE</button>
+        </div>
+      </div>
+
+      <div class="staff-list">
+        <table>
+          <tr>
+            <th>Staff ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>E-Mail</th>
+          </tr>
+          <tr>
+            <td>001</td>
+            <td>Jose</td>
+            <td>Cardona</td>
+            <td>08.03.1999</td>
+            <td>Male</td>
+            <td>jose.cardona@student.htw-berlin.de</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Chepe</td>
+            <td>Sepresta</td>
+            <td>08.03.1999</td>
+            <td>Male</td>
+            <td>jose.cardona@student.htw-berlin.de</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="container container-form-student" id="container-form-student">
+      <fieldset>
+        <form class="form-add">
+          <div class="form-divs">
+            <label for="student-id">Student ID</label>
+            <input type="text" class="form-add-input" id="student-id" name="student-id" required>
+          </div>
+          <div class="form-divs">
+            <label for="fname-student">First Name</label>
+            <input type="text" class="form-add-input" id="fname-student" name="fname-student" required>
+          </div>
+          <div class="form-divs">
+            <label for="lname-student">Last Name</label>
+            <input type="text" class="form-add-input" id="lname-student" name="lname-student">
+          </div>
+          <div class="form-divs">
+            <label for="dob-student">Date of Birth</label>
+            <input type="date" class="form-add-input" id="dob-student" name="dob-student">
+          </div>
+          <div class="form-divs">
+            <label>Gender</label>
+            <div class="radio-buttons male">
+              <input type="radio" id="male" name="gender-student" value="male">
+              <label for="male">Male</label>
+            </div>
+            <div class="radio-buttons female">
+              <input type="radio" id="female" name="gender-student" value="female">
+              <label for="female">Female</label>
+            </div>
+            <div class="radio-buttons other">
+              <input type="radio" id="other" name="gender-student" value="other">
+              <label for="other">Other</label>
+            </div>
+          </div>
+          <div class="form-divs">
+            <label for="department-student">Department</label>
+            <select id="department" name="department-student" required>
+              <option id="f1">Facutlty 1</option>
+              <option id="f2">Facutlty 2</option>
+              <option id="f3">Facutlty 3</option>
+              <option id="f4">Facutlty 4</option>
+            </select>
+          </div>
+          <div class="form-divs">
+            <label for="email-student">E-Mail</label>
+            <input type="email" class="form-add-input" id="email-student" name="email-student" required>
+          </div>
+          <div class="form-divs">
+            <label for="joining-date-student">Joining Date</label>
+            <input type="date" class="form-add-input" id="joining-date-student" name="joining-date-student">
+          </div>
+        </form>
+        <div class="form-divs">
+          <button class="form-button" id="student-add" onclick="appendStudent()">Add</button>
+          <button class="form-button" onclick="toggleStudents()">Cancel</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="container container-form-staff" id="container-form-staff">
+      <fieldset>
+        <form class="form-add">
+          <div class="form-divs">
+            <label for="staff-id">Staff ID</label>
+            <input type="text" class="form-add-input" id="staff-id" name="staff-id" required>
+          </div>
+          <div class="form-divs">
+            <label for="fname-staff">First Name</label>
+            <input type="text" class="form-add-input" id="fname-staff" name="fname-staff" required>
+          </div>
+          <div class="form-divs">
+            <label for="lname-staff">Last Name</label>
+            <input type="text" class="form-add-input" id="lname-staff" name="lname-staff">
+          </div>
+          <div class="form-divs">
+            <label for="dob-staff">Date of Birth</label>
+            <input type="date" class="form-add-input" id="dob-staff" name="dob-staff">
+          </div>
+          <div class="form-divs">
+            <label>Gender</label>
+            <div class="radio-buttons">
+              <input type="radio" id="male" name="gender-staff" value="male">
+              <label for="male">Male</label>
+            </div>
+            <div class="radio-buttons">
+              <input type="radio" id="female" name="gender-staff" value="female">
+              <label for="female">Female</label>
+            </div>
+            <div class="radio-buttons">
+              <input type="radio" id="other" name="gender-staff" value="other">
+              <label for="other">Other</label>
+            </div>
+          </div>
+          <div class="form-divs">
+            <label for="email-staff">E-Mail</label>
+            <input type="email" class="form-add-input" id="email-staff" name="email-staff" required>
+          </div>
+          <div class="form-divs">
+            <label for="joining-date-staff">Joining Date</label>
+            <input type="date" class="form-add-input" id="joining-date-staff" name="joining-date-staff">
+          </div>
+        </form>
+        <div class="form-divs">
+          <button class="form-button">Add</button>
+          <button class="form-button" onclick="toggleStaff()">Cancel</button>
+        </div>
+      </fieldset>
+    </div>
+
+  </section>
+</main>
+<script src="../js/admin.js"></script>
+</body>
+</html>

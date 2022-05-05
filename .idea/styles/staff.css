@@ -1,0 +1,85 @@
+
+.content{
+  display: flex;
+}
+.header{
+  width: 100px;
+}
+button{
+  margin-top: 15px;
+  margin-left: 15px;
+  padding: 2%;
+  width: 170px;
+  background-color: #999999;
+  border-radius: 1.1rem;
+  text-align: center;
+  align-items: center;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.container{
+  width: 1200px;
+  min-height: 90vh;
+  margin: 1% 10%;
+  background-color: white;
+  border-radius: 1.5rem;
+  border: 3px solid darkgrey;
+  cursor: pointer;
+}
+
+.container h2{
+  margin:5%;
+}
+
+.container ul{
+  margin: 5%;
+}
+
+.container li{
+  margin-top: 1%;
+  padding: 1%;
+  border: 3px solid;
+  border-radius: 1.2rem;
+  cursor: pointer;
+}
+
+.container li:nth-child(even){
+  background-color: darkgray;
+  color: white;
+}
+
+.container-all-courses{
+  display: block;
+}
+
+.container-mathematics{
+  display: none;
+}
+
+.container-programming{
+  display: none;
+}
+
+.container-computer-networks{
+  display: none;
+}
+
+.container-software-engineering{
+  display: none;
+}
+.container-operating-systems{
+  display: none;
+}
+.container-databanks{
+  display: none;
+}
+.container-web-development{
+  display: none;
+}
+.container-computer-graphics{
+  display: none;
+}
+.container-distributed-systems{
+  display: none;
+}
