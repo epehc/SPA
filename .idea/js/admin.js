@@ -2,28 +2,6 @@ const views = [document.getElementById("container-options"), document.getElement
   document.getElementById("container-staff"), document.getElementById("container-form-student"),
   document.getElementById("container-form-staff")];
 
-class Student{
-  constructor(id, firstName, lastName, dob, gender, department, email) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName= lastName;
-    this.dob= dob;
-    this.gender = gender;
-    this.department = department;
-    this.email= email;
-  }
-}
-
-class Staff{
-  constructor(id, firstName, lastName, dob, gender, email) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName= lastName;
-    this.dob= dob;
-    this.gender = gender;
-    this.email= email;
-  }
-}
 function toggleViewsOff(){
   for (let i =0; i<views.length; i++){
     views[i].style.display = "none";
@@ -56,42 +34,7 @@ function toggleStaffAdd(){
 }
 
 const studentList = document.getElementById("all-students");
-const staffList = document.getElementById("all-staff")
-
-
-const students = [new Student("001", "Jose", "Cardona", "08.03.1999",
-  "Male", "Comp. Sci", "jose.cardona@htw-berlin.de" )];
-const staff = [new Staff("001", "Jose", "Cardona", "08.03.1999",
-  "Male", "jose.cardona@htw-berlin.de" )];
-
-const studentButton = document.getElementById('student-add');
-/*studentButton.addEventListener('click', (e)=>{
-  document.write(document.getElementById('student-id').innerHTML)
-
-   const myTr = document.createElement('tr');
-   const myStudentId = document.createElement('td');
-  const myFirstName = document.createElement('td');
-  const myLastName = document.createElement('td');
-  const myDob = document.createElement('td');
-  const myGender = document.createElement('td');
-  const myDepartment = document.createElement('td');
-  const myEmail = document.createElement('td');
-  myStudentId.innerHTML = document.getElementById('student-id').innerHTML;
-   myTr.appendChild(myStudentId);
-  myFirstName.innerHTML = document.getElementById('fname-student').innerHTML;
-  myTr.appendChild(myFirstName);
-  myLastName.innerHTML = document.getElementById('lname-student').innerHTML;
-  myTr.appendChild(myLastName);
-  myDob.innerHTML = document.getElementById('dob-student').innerHTML;
-  myTr.appendChild(myDob);
-  myGender.innerHTML = students[students.length-1].gender;
-  myTr.appendChild(myGender);
-  myDepartment.innerHTML = students[students.length-1].department;
-  myTr.appendChild(myDepartment);
-  myEmail.innerHTML = students[students.length-1].emailID;
-  myTr.appendChild(myEmail);
-   studentList.appendChild(myTr);
-});*/
+const staffList = document.getElementById("all-staff");
 
 function appendStudent(){
   const myTr = document.createElement('tr');
@@ -147,11 +90,6 @@ function appendStaff(){
   staffList.appendChild(myTr);
   toggleStaff();
 }
-
-
-
-
-
 
 
 
