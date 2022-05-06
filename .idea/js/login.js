@@ -1,32 +1,44 @@
+const counterAdmin = 0;
+const buttonAdmin = document.getElementById('button-submit');
+var adminUsername =  document.getElementById('admin-username');
+var adminPassword = document.getElementById('admin-password');
 
 function validateFormAdmin(){
-  if(counter < 3){
+  console.log(counterAdmin);
+  counterAdmin++;
+  console.log(counterAdmin);
+  if(counterAdmin < 3){
     for(let i =0; i < staff_members.length; i++){
-      if(staff-username == 'admin'
-        && staff-password == 'pass'){
+      if(adminUsername.value == 'admin'
+        && adminPassword.value == 'pass'){
         return true;
       }
     }
-    counter++;
+    counterAdmin++;
     return false;
   }
-  button.disable = true;
+  buttonAdmin.disable = true;
 }
 
-const counter = 0;
-const button = document.getElementById('button-submit')
+const counterStaff = 0;
+const buttonStaff = document.getElementById('button-submit');
+var staffUsername =  document.getElementById('staff-username');
+var staffPassword = document.getElementById('staff-password');
+
 function validateFormStaff(){
-  console.log(counter)
-  if(counter < 3){
+  console.log(counterStaff);
+  counterStaff++;
+  console.log(counterStaff);
+  if(counterStaff < 3){
     for(let i =0; i < staff_members.length; i++){
-      if(staff-username == 'user'
-        && staff-password == 'pass'){
+      if(staffUsername.value == 'user'
+        && staffPassword.value == 'pass'){
         return true;
       }
     }
-    counter++;
+    counterStaff++;
     return false;
   }
-  button.disable = true;
+  buttonStaff.disable = true;
 
 }
