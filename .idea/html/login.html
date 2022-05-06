@@ -20,35 +20,35 @@
       </div>
       <div class="header-content">
         <div class="left-header">
-          <form name="admin-login-form" id="admin-form" action="admin.html" onsubmit="return validateFormAdmin()" method="post">
-            <h3>Admin Login:</br></h3>
+          <form name="admin-login-form" id="admin-form" action="admin.html">
+            <h3>Admin Login:</h3>
             <div>
-              <label for="admin-username"></br>Username: </br></label>
-              <input type="text" name="username" id="admin-username" required>
+              <label for="admin-username">Username:</label>
+              <input type="text" name="username" id="admin-username" placeholder="Username" required>
             </div>
             <div>
-              <label for="admin-password">Password: </br></label>
-              <input type="password" name="password" id="admin-password" required>
+              <label for="admin-password">Password: </label>
+              <input type="password" name="password" id="admin-password" placeholder="Password" required>
             </div>
             <div class="admin-submit-button">
-              <button class="button-submit b1" id="button-submit-admin" type="submit" vlaue="login"></br>Log in</button>
+              <button class="button-submit b1" id="button-submit-admin" onclick="validateFormAdmin()" value="login">Log in</button>
             </div>
 
           </form>
         </div>
         <div class="right-header">
           <form name="staff-login-form" id="staff-form" action="staff.html" onsubmit="return validateFormStaff()" method="post">
-            <h3>Staff Login:</br></h3>
+            <h3>Staff Login:</h3>
             <div>
-              <label for="staff-username"></br>Username: </br></label>
-              <input type="text" name="username" id="staff-username" required>
+              <label for="staff-username">Username:</label>
+              <input type="text" name="username" id="staff-username" placeholder="Username" required>
             </div>
             <div>
-              <label for="staff-password">Password: </br></label>
-              <input type="password" name="password" id="staff-password" required>
+              <label for="staff-password">Password:</label>
+              <input type="password" name="password" id="staff-password" placeholder="Password" required>
             </div>
             <div class="staff-submit-button">
-              <button class="button-submit b2" type="submit" vlaue="login"></br>Log in</button>
+              <button class="button-submit b2" type="submit" vlaue="login">Log in</button>
             </div>
           </form>
         </div>

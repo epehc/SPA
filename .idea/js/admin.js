@@ -56,6 +56,7 @@ function toggleStaffAdd(){
 }
 
 const studentList = document.getElementById("all-students");
+const staffList = document.getElementById("all-staff")
 
 
 const students = [new Student("001", "Jose", "Cardona", "08.03.1999",
@@ -101,23 +102,50 @@ function appendStudent(){
   const myGender = document.createElement('td');
   const myDepartment = document.createElement('td');
   const myEmail = document.createElement('td');
-  var inText = '003';
-  myStudentId.innerHTML = document.getElementById('student-id').innerHTML;
-  myTr.appendChild(inText);
-  myFirstName.innerHTML = document.getElementById('fname-student').innerHTML;
-  myTr.appendChild(inText);
-  myLastName.innerHTML = document.getElementById('lname-student').innerHTML;
-  myTr.appendChild(inText);
-  myDob.innerHTML = document.getElementById('dob-student').innerHTML;
-  myTr.appendChild(inText);
-  myGender.innerHTML = students[students.length-1].gender;
-  myTr.appendChild(inText);
-  myDepartment.innerHTML = students[students.length-1].department;
-  myTr.appendChild(inText);
-  myEmail.innerHTML = students[students.length-1].emailID;
-  myTr.appendChild(inText);
+
+  myStudentId.innerHTML = document.getElementById('student-id').value;
+  myTr.appendChild(myStudentId);
+  myFirstName.innerHTML = document.getElementById('fname-student').value;
+  myTr.appendChild(myFirstName);
+  myLastName.innerHTML = document.getElementById('lname-student').value;
+  myTr.appendChild(myLastName);
+  myDob.innerHTML = document.getElementById('dob-student').value;
+  myTr.appendChild(myDob);
+  myGender.innerHTML = document.querySelector('input[name="gender-student"]:checked').value;
+  myTr.appendChild(myGender);
+  var select = document.getElementById('department-student');
+  myDepartment.innerHTML =select.options[select.selectedIndex].text;
+  myTr.appendChild(myDepartment);
+  myEmail.innerHTML = document.getElementById('email-student').value;
+  myTr.appendChild(myEmail);
   studentList.appendChild(myTr);
   toggleStudents();
+}
+
+function appendStaff(){
+  const myTr = document.createElement('tr');
+  const myStaffId = document.createElement('td');
+  const myFirstName = document.createElement('td');
+  const myLastName = document.createElement('td');
+  const myDob = document.createElement('td');
+  const myGender = document.createElement('td');
+  const myDepartment = document.createElement('td');
+  const myEmail = document.createElement('td');
+
+  myStaffId.innerHTML = document.getElementById('staff-id').value;
+  myTr.appendChild(myStaffId);
+  myFirstName.innerHTML = document.getElementById('fname-staff').value;
+  myTr.appendChild(myFirstName);
+  myLastName.innerHTML = document.getElementById('lname-staff').value;
+  myTr.appendChild(myLastName);
+  myDob.innerHTML = document.getElementById('dob-staff').value;
+  myTr.appendChild(myDob);
+  myGender.innerHTML = document.querySelector('input[name="gender-staff"]:checked').value;
+  myTr.appendChild(myGender);
+  myEmail.innerHTML = document.getElementById('email-staff').value;
+  myTr.appendChild(myEmail);
+  staffList.appendChild(myTr);
+  toggleStaff();
 }
 
 

@@ -60,19 +60,19 @@
             <td>001</td>
             <td>Jose</td>
             <td>Cardona</td>
-            <td>08.03.1999</td>
+            <td>1999-03-08</td>
             <td>Male</td>
             <td>Comp. Science</td>
             <td>jose.cardona@student.htw-berlin.de</td>
           </tr>
           <tr>
             <td>002</td>
-            <td>Chepe</td>
-            <td>Sepresta</td>
-            <td>08.03.1999</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>2000-01-01</td>
             <td>Male</td>
             <td>Comp. Science</td>
-            <td>jose.cardona@student.htw-berlin.de</td>
+            <td>example@domain.com</td>
           </tr>
         </table>
       </div>
@@ -90,7 +90,7 @@
       </div>
 
       <div class="staff-list">
-        <table>
+        <table class="all-staff" id="all-staff">
           <tr>
             <th>Staff ID</th>
             <th>First Name</th>
@@ -103,17 +103,17 @@
             <td>001</td>
             <td>Jose</td>
             <td>Cardona</td>
-            <td>08.03.1999</td>
+            <td>1999-03-08</td>
             <td>Male</td>
             <td>jose.cardona@student.htw-berlin.de</td>
           </tr>
           <tr>
             <td>002</td>
-            <td>Chepe</td>
-            <td>Sepresta</td>
-            <td>08.03.1999</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>2000-01-01</td>
             <td>Male</td>
-            <td>jose.cardona@student.htw-berlin.de</td>
+            <td>example@domain.com</td>
           </tr>
         </table>
       </div>
@@ -125,56 +125,56 @@
         <form class="form-add">
           <div class="form-divs">
             <label for="student-id">Student ID</label>
-            <input type="text" class="form-add-input" id="student-id" name="student-id" required>
+            <input type="text" class="form-add-input student-id" id="student-id" name="student-id" placeholder="001" required>
           </div>
           <div class="form-divs">
             <label for="fname-student">First Name</label>
-            <input type="text" class="form-add-input" id="fname-student" name="fname-student" required>
+            <input type="text" class="form-add-input fn-student" id="fname-student" name="fname-student" placeholder="John" required>
           </div>
           <div class="form-divs">
             <label for="lname-student">Last Name</label>
-            <input type="text" class="form-add-input" id="lname-student" name="lname-student">
+            <input type="text" class="form-add-input ln-student" id="lname-student" name="lname-student" placeholder="Doe">
           </div>
           <div class="form-divs">
             <label for="dob-student">Date of Birth</label>
-            <input type="date" class="form-add-input" id="dob-student" name="dob-student">
+            <input type="date" class="form-add-input dob-student" id="dob-student" name="dob-student">
           </div>
           <div class="form-divs">
             <label>Gender</label>
-            <div class="radio-buttons male">
-              <input type="radio" id="male" name="gender-student" value="male">
+            <div class="radio-buttons gender-male-student">
+              <input type="radio" id="male" name="gender-student" value="Male">
               <label for="male">Male</label>
             </div>
-            <div class="radio-buttons female">
-              <input type="radio" id="female" name="gender-student" value="female">
+            <div class="radio-buttons gender-female-student">
+              <input type="radio" id="female" name="gender-student" value="Female">
               <label for="female">Female</label>
             </div>
-            <div class="radio-buttons other">
-              <input type="radio" id="other" name="gender-student" value="other">
+            <div class="radio-buttons gender-other-student">
+              <input type="radio" id="other" name="gender-student" value="Other">
               <label for="other">Other</label>
             </div>
           </div>
           <div class="form-divs">
             <label for="department-student">Department</label>
-            <select id="department" name="department-student" required>
-              <option id="f1">Facutlty 1</option>
-              <option id="f2">Facutlty 2</option>
-              <option id="f3">Facutlty 3</option>
-              <option id="f4">Facutlty 4</option>
+            <select id="department-student" name="department-student" required>
+              <option id="f1" name="student-department" value="Faculty 1" selected>Faculty 1</option>
+              <option id="f2" name="student-department" value="Faculty 2">Faculty 2</option>
+              <option id="f3" name="student-department" value="Faculty 3">Faculty 3</option>
+              <option id="f4" name="student-department" value="Faculty 4">Faculty 4</option>
             </select>
           </div>
           <div class="form-divs">
             <label for="email-student">E-Mail</label>
-            <input type="email" class="form-add-input" id="email-student" name="email-student" required>
+            <input type="email" class="form-add-input email-student" id="email-student" name="email-student" placeholder="example@domain.com" required>
           </div>
           <div class="form-divs">
             <label for="joining-date-student">Joining Date</label>
-            <input type="date" class="form-add-input" id="joining-date-student" name="joining-date-student">
+            <input type="date" class="form-add-input date-student" id="joining-date-student" name="joining-date-student">
           </div>
         </form>
         <div class="form-divs">
-          <button class="form-button" id="student-add" onclick="appendStudent()">Add</button>
-          <button class="form-button" onclick="toggleStudents()">Cancel</button>
+          <button class="form-button submit-student" id="student-add" onclick="appendStudent()">Add</button>
+          <button class="form-button cancel-student" onclick="toggleStudents()">Cancel</button>
         </div>
       </fieldset>
     </div>
@@ -184,47 +184,47 @@
         <form class="form-add">
           <div class="form-divs">
             <label for="staff-id">Staff ID</label>
-            <input type="text" class="form-add-input" id="staff-id" name="staff-id" required>
+            <input type="text" class="form-add-input staff-id" id="staff-id" name="staff-id" placeholder="001" required>
           </div>
           <div class="form-divs">
             <label for="fname-staff">First Name</label>
-            <input type="text" class="form-add-input" id="fname-staff" name="fname-staff" required>
+            <input type="text" class="form-add-input fn-staff" id="fname-staff" name="fname-staff" placeholder="John" required>
           </div>
           <div class="form-divs">
             <label for="lname-staff">Last Name</label>
-            <input type="text" class="form-add-input" id="lname-staff" name="lname-staff">
+            <input type="text" class="form-add-input ln-staff" id="lname-staff" name="lname-staff" placeholder="Doe">
           </div>
           <div class="form-divs">
             <label for="dob-staff">Date of Birth</label>
-            <input type="date" class="form-add-input" id="dob-staff" name="dob-staff">
+            <input type="date" class="form-add-input dob-staff" id="dob-staff" name="dob-staff">
           </div>
           <div class="form-divs">
             <label>Gender</label>
-            <div class="radio-buttons">
-              <input type="radio" id="male" name="gender-staff" value="male">
+            <div class="radio-buttons gender-male-staff">
+              <input type="radio" id="male" name="gender-staff" value="Male">
               <label for="male">Male</label>
             </div>
-            <div class="radio-buttons">
-              <input type="radio" id="female" name="gender-staff" value="female">
+            <div class="radio-buttons gender-female-staff">
+              <input type="radio" id="female" name="gender-staff" value="Female">
               <label for="female">Female</label>
             </div>
-            <div class="radio-buttons">
-              <input type="radio" id="other" name="gender-staff" value="other">
+            <div class="radio-buttons gender-other-staff">
+              <input type="radio" id="other" name="gender-staff" value="Other">
               <label for="other">Other</label>
             </div>
           </div>
           <div class="form-divs">
             <label for="email-staff">E-Mail</label>
-            <input type="email" class="form-add-input" id="email-staff" name="email-staff" required>
+            <input type="email" class="form-add-input email-staff" id="email-staff" name="email-staff" placeholder="example@domain.com" required>
           </div>
           <div class="form-divs">
             <label for="joining-date-staff">Joining Date</label>
-            <input type="date" class="form-add-input" id="joining-date-staff" name="joining-date-staff">
+            <input type="date" class="form-add-input date-staff" id="joining-date-staff" name="joining-date-staff">
           </div>
         </form>
         <div class="form-divs">
-          <button class="form-button">Add</button>
-          <button class="form-button" onclick="toggleStaff()">Cancel</button>
+          <button class="form-button submit-staff" onclick="appendStaff()">Add</button>
+          <button class="form-button cancel-staff" onclick="toggleStaff()">Cancel</button>
         </div>
       </fieldset>
     </div>
