@@ -20,35 +20,36 @@
       </div>
       <div class="header-content">
         <div class="left-header">
-          <form name="admin-login-form" id="admin-form" action="admin.html">
+          <form name="admin-login-form" id="admin-form" action="admin.html" onsubmit="return validateFormAdmin()">
             <h3>Admin Login:</h3>
             <div>
               <label for="admin-username">Username:</label>
-              <input type="text" name="username" id="admin-username" placeholder="Username" required>
+              <input type="text" name="admin-username" id="admin-username" placeholder="Username" required>
             </div>
             <div>
               <label for="admin-password">Password: </label>
-              <input type="password" name="password" id="admin-password" placeholder="Password" required>
+              <input type="password" name="admin-password" id="admin-password" placeholder="Password" required>
             </div>
             <div class="admin-submit-button">
-              <button class="button-submit b1" id="button-submit-admin" onclick="validateFormAdmin()" value="login">Log in</button>
+              <button class="button-submit b1" id="button-submit-admin" type="submit">Log in</button>
             </div>
 
           </form>
+
         </div>
         <div class="right-header">
           <form name="staff-login-form" id="staff-form" action="staff.html" onsubmit="return validateFormStaff()" method="post">
             <h3>Staff Login:</h3>
             <div>
               <label for="staff-username">Username:</label>
-              <input type="text" name="username" id="staff-username" placeholder="Username" required>
+              <input type="text" name="staff-username" id="staff-username" placeholder="Username" required>
             </div>
             <div>
               <label for="staff-password">Password:</label>
-              <input type="password" name="password" id="staff-password" placeholder="Password" required>
+              <input type="password" name="staff-password" id="staff-password" placeholder="Password" required>
             </div>
             <div class="staff-submit-button">
-              <button class="button-submit b2" type="submit" vlaue="login">Log in</button>
+              <button class="button-submit b2" type="submit" vlaue="login" onsubmit="return validateFormStaff()">Log in</button>
             </div>
           </form>
         </div>

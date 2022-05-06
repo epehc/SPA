@@ -1,44 +1,57 @@
-const counterAdmin = 0;
-const buttonAdmin = document.getElementById('button-submit');
-var adminUsername =  document.getElementById('admin-username');
-var adminPassword = document.getElementById('admin-password');
-
+var counterAdmin = 3;
 function validateFormAdmin(){
-  console.log(counterAdmin);
-  counterAdmin++;
-  console.log(counterAdmin);
-  if(counterAdmin < 3){
-    for(let i =0; i < staff_members.length; i++){
-      if(adminUsername.value == 'admin'
-        && adminPassword.value == 'pass'){
-        return true;
-      }
+  var authorized = false;
+  var adminUsername =  document.getElementById('admin-username').value;
+  var adminPassword = document.getElementById('admin-password').value;
+  if(counterAdmin > 1){
+    if(adminUsername == "admin" && adminPassword == "pass"){
+      authorized = true;
+
     }
-    counterAdmin++;
-    return false;
+    else{
+      authorized = false;
+      counterAdmin--;
+      alert("wrong username/password. Attempts remaining: " + counterAdmin);
+    }
+    return authorized;
   }
-  buttonAdmin.disable = true;
+   else{
+     alert("No attempts left.");
+     disableAdminButton();
+     return false;
+  }
 }
 
-const counterStaff = 0;
-const buttonStaff = document.getElementById('button-submit');
-var staffUsername =  document.getElementById('staff-username');
-var staffPassword = document.getElementById('staff-password');
+function disableAdminButton(){
+  var button = document.getElementById('button-submit-admin');
+  button.disabled = true;
+}
 
+function disableStaffButton(){
+  var button = document.getElementById('button-submit-staff');
+  button.disabled = true;
+}
+
+var staffCounter = 3;
 function validateFormStaff(){
-  console.log(counterStaff);
-  counterStaff++;
-  console.log(counterStaff);
-  if(counterStaff < 3){
-    for(let i =0; i < staff_members.length; i++){
-      if(staffUsername.value == 'user'
-        && staffPassword.value == 'pass'){
-        return true;
-      }
+  var authorized = false;
+  var adminUsername =  document.getElementById('staff-username').value;
+  var adminPassword = document.getElementById('staff-password').value;
+  if(staffCounter > 1){
+    if(adminUsername == "user" && adminPassword == "pass"){
+      authorized = true;
+
     }
-    counterStaff++;
+    else{
+      authorized = false;
+      staffCounter--;
+      alert("wrong username/password. Attempts remaining: " + staffCounter);
+    }
+    return authorized;
+  }
+  else{
+    alert("No attempts left.");
+    disableStaffButton();
     return false;
   }
-  buttonStaff.disable = true;
-
 }
