@@ -2,6 +2,10 @@ const views = [document.getElementById("container-options"), document.getElement
   document.getElementById("container-staff"), document.getElementById("container-form-student"),
   document.getElementById("container-form-staff")];
 
+document.getElementById('joining-date-student').max = new Date().toISOString().split("T")[0];
+document.getElementById('joining-date-staff').max = new Date().toISOString().split("T")[0];
+
+
 function toggleViewsOff(){
   for (let i =0; i<views.length; i++){
     views[i].style.display = "none";
@@ -37,14 +41,14 @@ const studentList = document.getElementById("all-students");
 const staffList = document.getElementById("all-staff");
 
 function appendStudent(){
-  const myTr = document.createElement('tr');
-  const myStudentId = document.createElement('td');
-  const myFirstName = document.createElement('td');
-  const myLastName = document.createElement('td');
-  const myDob = document.createElement('td');
-  const myGender = document.createElement('td');
-  const myDepartment = document.createElement('td');
-  const myEmail = document.createElement('td');
+  var myTr = document.createElement('tr');
+  var myStudentId = document.createElement('td');
+  var myFirstName = document.createElement('td');
+  var myLastName = document.createElement('td');
+  var myDob = document.createElement('td');
+  var myGender = document.createElement('td');
+  var myDepartment = document.createElement('td');
+  var myEmail = document.createElement('td');
 
   myStudentId.innerHTML = document.getElementById('student-id').value;
   myTr.appendChild(myStudentId);
@@ -63,17 +67,18 @@ function appendStudent(){
   myTr.appendChild(myEmail);
   studentList.appendChild(myTr);
   toggleStudents();
+
 }
 
 function appendStaff(){
-  const myTr = document.createElement('tr');
-  const myStaffId = document.createElement('td');
-  const myFirstName = document.createElement('td');
-  const myLastName = document.createElement('td');
-  const myDob = document.createElement('td');
-  const myGender = document.createElement('td');
-  const myDepartment = document.createElement('td');
-  const myEmail = document.createElement('td');
+  var myTr = document.createElement('tr');
+  var myStaffId = document.createElement('td');
+  var myFirstName = document.createElement('td');
+  var myLastName = document.createElement('td');
+  var myDob = document.createElement('td');
+  var myGender = document.createElement('td');
+  var myDepartment = document.createElement('td');
+  var myEmail = document.createElement('td');
 
   myStaffId.innerHTML = document.getElementById('staff-id').value;
   myTr.appendChild(myStaffId);

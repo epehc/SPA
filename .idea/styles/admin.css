@@ -215,5 +215,17 @@ fieldset{
   border: 3px solid darkslategray;
 }
 
+.filters{
+  width: 30%;
+  padding: 10px;
+  margin: 2% 8% 2% 2%;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+
+.filters label{
+
+}
+
 
 

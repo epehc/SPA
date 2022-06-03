@@ -37,6 +37,20 @@
     <div class="container container-student" id="container-student">
       <div class="info-bar info-bar-student">
         <h2>All Students</h2>
+        <div class="filters">
+          <label for="departments">Choose a Department: </label>
+          <select name="departments" id="departments">
+            <option value="dept-1">Department 1</option>
+            <option value="dept-2">Department 2</option>
+            <option value="dept-3">Department 3</option>
+            <option value="dept-4">Department 4</option>
+          </select>
+          <label for="semesters">Choose a Semester: </label>
+          <select name="semester" id="semesters">
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
         <div class="info-bar-buttons">
           <button class="actions-button student-add" onclick="toggleStudentsAdd()">ADD</button>
           <button class="actions-button student-update">UPDATE</button>
@@ -82,6 +96,20 @@
     <div class="container container-staff" id="container-staff" >
       <div class="info-bar info-bar-staff">
         <h2>All Staff</h2>
+        <div class="filters">
+          <label for="departments">Choose a Department: </label>
+          <select name="departments" id="departments">
+            <option value="dept-1">Department 1</option>
+            <option value="dept-2">Department 2</option>
+            <option value="dept-3">Department 3</option>
+            <option value="dept-4">Department 4</option>
+          </select>
+          <label for="semesters">Choose a Semester: </label>
+          <select name="semester" id="semesters">
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
         <div class="info-bar-buttons">
           <button class="actions-button staff-add" onclick="toggleStaffAdd()">ADD</button>
           <button class="actions-button staff-update">UPDATE</button>
@@ -137,7 +165,7 @@
           </div>
           <div class="form-divs">
             <label for="dob-student">Date of Birth</label>
-            <input type="date" class="form-add-input dob-student" id="dob-student" name="dob-student">
+            <input type="date" class="form-add-input dob-student" id="dob-student" name="dob-student" min="1962-01-01" max="2005-01-01">
           </div>
           <div class="form-divs">
             <label>Gender</label>
@@ -157,10 +185,10 @@
           <div class="form-divs">
             <label for="department-student">Department</label>
             <select id="department-student" name="department-student" required>
-              <option id="f1" name="student-department" value="Faculty 1" selected>Faculty 1</option>
-              <option id="f2" name="student-department" value="Faculty 2">Faculty 2</option>
-              <option id="f3" name="student-department" value="Faculty 3">Faculty 3</option>
-              <option id="f4" name="student-department" value="Faculty 4">Faculty 4</option>
+              <option id="f1" name="student-department" value="dept-1" selected>Department 1</option>
+              <option id="f2" name="student-department" value="dept-2">Department 2</option>
+              <option id="f3" name="student-department" value="dept-3">Department 3</option>
+              <option id="f4" name="student-department" value="dept-4">Department 4</option>
             </select>
           </div>
           <div class="form-divs">
@@ -169,7 +197,7 @@
           </div>
           <div class="form-divs">
             <label for="joining-date-student">Joining Date</label>
-            <input type="date" class="form-add-input date-student" id="joining-date-student" name="joining-date-student">
+            <input type="date" class="form-add-input date-student" id="joining-date-student" name="joining-date-student" min="2015-01-01">
           </div>
         </form>
         <div class="form-divs">
@@ -196,7 +224,7 @@
           </div>
           <div class="form-divs">
             <label for="dob-staff">Date of Birth</label>
-            <input type="date" class="form-add-input dob-staff" id="dob-staff" name="dob-staff">
+            <input type="date" class="form-add-input dob-staff" id="dob-staff" name="dob-staff" min="1962-01-01" max="2005-01-01">
           </div>
           <div class="form-divs">
             <label>Gender</label>
@@ -219,7 +247,7 @@
           </div>
           <div class="form-divs">
             <label for="joining-date-staff">Joining Date</label>
-            <input type="date" class="form-add-input date-staff" id="joining-date-staff" name="joining-date-staff">
+            <input type="date" class="form-add-input date-staff" id="joining-date-staff" name="joining-date-staff" min="2015-01-01">
           </div>
         </form>
         <div class="form-divs">
