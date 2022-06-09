@@ -38,18 +38,20 @@
       <div class="info-bar info-bar-student">
         <h2>All Students</h2>
         <div class="filters">
-          <label for="departments">Choose a Department: </label>
-          <select name="departments" id="departments">
-            <option value="dept-1">Department 1</option>
-            <option value="dept-2">Department 2</option>
-            <option value="dept-3">Department 3</option>
-            <option value="dept-4">Department 4</option>
+          <label for="info-bar-student-departments">Choose a Department: </label>
+          <select name="info-bar-student-departments" id="info-bar-student-departments">
+            <option id="d1" name="student-department" value="dept-1">Department 1</option>
+            <option id="d2" name="student-department" value="dept-2">Department 2</option>
+            <option id="d3" name="student-department" value="dept-3">Department 3</option>
+            <option id="d4" name="student-department" value="dept-4">Department 4</option>
           </select>
-          <label for="semesters">Choose a Semester: </label>
-          <select name="semester" id="semesters">
-            <option value="summer">Summer</option>
+          <label for="info-bar-student-semesters">Choose a Semester: </label>
+          <select name="info-bar-student-semesters" id="info-bar-student-semesters">
+            <option value="summer" selected>Summer</option>
             <option value="winter">Winter</option>
           </select>
+          <button class="form-button" type="submit" onclick="filterStudents()">Filter</button>
+          <button class="form-button" type="submit" onclick="resetFilterStudents() ">Reset</button>
         </div>
         <div class="info-bar-buttons">
           <button class="actions-button student-add" onclick="toggleStudentsAdd()">ADD</button>
@@ -70,24 +72,6 @@
             <th>Department</th>
             <th>E-Mail</th>
           </tr>
-          <tr>
-            <td>001</td>
-            <td>Jose</td>
-            <td>Cardona</td>
-            <td>1999-03-08</td>
-            <td>Male</td>
-            <td>Comp. Science</td>
-            <td>jose.cardona@student.htw-berlin.de</td>
-          </tr>
-          <tr>
-            <td>002</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>2000-01-01</td>
-            <td>Male</td>
-            <td>Comp. Science</td>
-            <td>example@domain.com</td>
-          </tr>
         </table>
       </div>
 
@@ -97,18 +81,20 @@
       <div class="info-bar info-bar-staff">
         <h2>All Staff</h2>
         <div class="filters">
-          <label for="departments">Choose a Department: </label>
-          <select name="departments" id="departments">
-            <option value="dept-1">Department 1</option>
-            <option value="dept-2">Department 2</option>
-            <option value="dept-3">Department 3</option>
-            <option value="dept-4">Department 4</option>
+          <label for="info-bar-staff-departments">Choose a Department: </label>
+          <select name="info-bar-staff-departments" id="info-bar-staff-departments">
+            <option id="d1" name="student-department" value="dept-1">Department 1</option>
+            <option id="d2" name="student-department" value="dept-2">Department 2</option>
+            <option id="d3" name="student-department" value="dept-3">Department 3</option>
+            <option id="d4" name="student-department" value="dept-4">Department 4</option>
           </select>
-          <label for="semesters">Choose a Semester: </label>
-          <select name="semester" id="semesters">
+          <label for="info-bar-staff-semesters">Choose a Semester: </label>
+          <select name="info-bar-staff-semesters" id="info-bar-staff-semesters">
             <option value="summer">Summer</option>
             <option value="winter">Winter</option>
           </select>
+          <button class="form-button" type="submit" onclick="filterStaff()">Filter</button>
+          <button class="form-button" type="reset" onclick="resetFilterStaff()">Reset</button>
         </div>
         <div class="info-bar-buttons">
           <button class="actions-button staff-add" onclick="toggleStaffAdd()">ADD</button>
@@ -125,24 +111,10 @@
             <th>Last Name</th>
             <th>DOB</th>
             <th>Gender</th>
+            <th>Department</th>
             <th>E-Mail</th>
           </tr>
-          <tr>
-            <td>001</td>
-            <td>Jose</td>
-            <td>Cardona</td>
-            <td>1999-03-08</td>
-            <td>Male</td>
-            <td>jose.cardona@student.htw-berlin.de</td>
-          </tr>
-          <tr>
-            <td>002</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>2000-01-01</td>
-            <td>Male</td>
-            <td>example@domain.com</td>
-          </tr>
+
         </table>
       </div>
 
@@ -150,7 +122,7 @@
 
     <div class="container container-form-student" id="container-form-student">
       <fieldset>
-        <form class="form-add">
+        <form class="form-add" id="form-add-student">
           <div class="form-divs">
             <label for="student-id">Student ID</label>
             <input type="text" class="form-add-input student-id" id="student-id" name="student-id" placeholder="001" required>
@@ -185,10 +157,10 @@
           <div class="form-divs">
             <label for="department-student">Department</label>
             <select id="department-student" name="department-student" required>
-              <option id="f1" name="student-department" value="dept-1" selected>Department 1</option>
-              <option id="f2" name="student-department" value="dept-2">Department 2</option>
-              <option id="f3" name="student-department" value="dept-3">Department 3</option>
-              <option id="f4" name="student-department" value="dept-4">Department 4</option>
+              <option id="d1" name="student-department" value="dept-1">Department 1</option>
+              <option id="d2" name="student-department" value="dept-2">Department 2</option>
+              <option id="d3" name="student-department" value="dept-3">Department 3</option>
+              <option id="d4" name="student-department" value="dept-4">Department 4</option>
             </select>
           </div>
           <div class="form-divs">
@@ -209,7 +181,7 @@
 
     <div class="container container-form-staff" id="container-form-staff">
       <fieldset>
-        <form class="form-add">
+        <form class="form-add" id="form-add-staff">
           <div class="form-divs">
             <label for="staff-id">Staff ID</label>
             <input type="text" class="form-add-input staff-id" id="staff-id" name="staff-id" placeholder="001" required>
@@ -240,6 +212,15 @@
               <input type="radio" id="other" name="gender-staff" value="Other">
               <label for="other">Other</label>
             </div>
+          </div>
+          <div class="form-divs">
+            <label for="department-staff">Department</label>
+            <select id="department-staff" name="department-staff" required>
+              <option id="f1" name="staff-department" value="dept-1">Department 1</option>
+              <option id="f2" name="staff-department" value="dept-2">Department 2</option>
+              <option id="f3" name="staff-department" value="dept-3">Department 3</option>
+              <option id="f4" name="staff-department" value="dept-4">Department 4</option>
+            </select>
           </div>
           <div class="form-divs">
             <label for="email-staff">E-Mail</label>
