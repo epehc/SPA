@@ -40,6 +40,8 @@
         <div class="filters">
           <label for="info-bar-student-departments">Choose a Department: </label>
           <select name="info-bar-student-departments" id="info-bar-student-departments">
+
+            <option id="" disabled selected hidden>Please choose...</option>
             <option id="d1" name="student-department" value="dept-1">Department 1</option>
             <option id="d2" name="student-department" value="dept-2">Department 2</option>
             <option id="d3" name="student-department" value="dept-3">Department 3</option>
@@ -47,7 +49,9 @@
           </select>
           <label for="info-bar-student-semesters">Choose a Semester: </label>
           <select name="info-bar-student-semesters" id="info-bar-student-semesters">
-            <option value="summer" selected>Summer</option>
+
+            <option id="" disabled selected hidden>Please choose...</option>
+            <option value="summer">Summer</option>
             <option value="winter">Winter</option>
           </select>
           <button class="form-button" type="submit" onclick="filterStudents()">Filter</button>
@@ -83,6 +87,7 @@
         <div class="filters">
           <label for="info-bar-staff-departments">Choose a Department: </label>
           <select name="info-bar-staff-departments" id="info-bar-staff-departments">
+            <option id="" disabled selected hidden>Please choose...</option>
             <option id="d1" name="student-department" value="dept-1">Department 1</option>
             <option id="d2" name="student-department" value="dept-2">Department 2</option>
             <option id="d3" name="student-department" value="dept-3">Department 3</option>
@@ -90,6 +95,7 @@
           </select>
           <label for="info-bar-staff-semesters">Choose a Semester: </label>
           <select name="info-bar-staff-semesters" id="info-bar-staff-semesters">
+            <option id="" disabled selected hidden>Please choose...</option>
             <option value="summer">Summer</option>
             <option value="winter">Winter</option>
           </select>

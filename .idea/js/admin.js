@@ -37,10 +37,11 @@ function toggleStaffAdd(){
   views[4].style.display="block";
 }
 
-const studentList = document.getElementById("all-students");
-const staffList = document.getElementById("all-staff");
+const studentList = document.querySelector("#all-students");
+const staffList = document.querySelector("#all-staff");
 const students = [];
 const staff = [];
+
 
 function appendStudent(){
   //create a student with the information from the form, and push it to the student list
@@ -54,39 +55,9 @@ function appendStudent(){
     "joiningDate": document.getElementById('joining-date-student').value,
     "email": document.getElementById('email-student').value
   };
+
   students.push(student);
-
-
-  //create elements for the table
-  var myTr = document.createElement('tr');
-  var myStudentId = document.createElement('td');
-  var myFirstName = document.createElement('td');
-  var myLastName = document.createElement('td');
-  var myDob = document.createElement('td');
-  var myGender = document.createElement('td');
-  var myDepartment = document.createElement('td');
-  var myEmail = document.createElement('td');
-
-
-  //assign the corresponding values to their table counter-part
-  myStudentId.innerHTML = student.id;
-  myFirstName.innerHTML = student.firstName;
-  myLastName.innerHTML = student.lastName;
-  myDob.innerHTML = student.dob;
-  myGender.innerHTML = student.gender;
-  myDepartment.innerHTML = student.department;
-  myDepartment.setAttribute('id', 'mydepartment');
-  myEmail.innerHTML = student.email;
-
-  //append the table items to the table-row element
-  myTr.appendChild(myStudentId);
-  myTr.appendChild(myFirstName);
-  myTr.appendChild(myLastName);
-  myTr.appendChild(myDob);
-  myTr.appendChild(myGender);
-  myTr.appendChild(myDepartment);
-  myTr.appendChild(myEmail);
-  studentList.appendChild(myTr);
+  updateTableStudents();
 
   //switch back to the student list view
   toggleStudents();
@@ -97,15 +68,6 @@ function appendStudent(){
 }
 
 function appendStaff(){
-  //create elements for the table
-  var myTr = document.createElement('tr');
-  var myStaffId = document.createElement('td');
-  var myFirstName = document.createElement('td');
-  var myLastName = document.createElement('td');
-  var myDob = document.createElement('td');
-  var myGender = document.createElement('td');
-  var myDepartment = document.createElement('td');
-  var myEmail = document.createElement('td');
 
   //create a staff member object based on the information filled out on the form and add it to staff list
   var member = {
@@ -119,30 +81,48 @@ function appendStaff(){
     "email": document.getElementById('email-staff').value
   };
   staff.push(member);
-
-  //assign the member variables to their table counter-part
-  myStaffId.innerHTML = member.id;
-  myFirstName.innerHTML = member.firstName;
-  myLastName.innerHTML = member.lastName;
-  myDob.innerHTML = member.dob;
-  myGender.innerHTML = member.gender;
-  myDepartment.innerHTML = member.department;
-  myEmail.innerHTML = member.email;
-
-  //append the td elements to the tr, and the tr to the table
-  myTr.appendChild(myStaffId);
-  myTr.appendChild(myFirstName);
-  myTr.appendChild(myLastName);
-  myTr.appendChild(myDob);
-  myTr.appendChild(myGender);
-  myTr.appendChild(myDepartment);
-  myTr.appendChild(myEmail);
-  staffList.appendChild(myTr);
+  updateTableStaff();
 
   //toggle the staff view and reset the form to a blank state
   toggleStaff();
   document.getElementById('form-add-staff').reset();
 }
+
+function updateTableStudents(){
+  students.forEach(student =>{
+      let myTr = document.createElement('tr');
+
+      for(let [key, value] of Object.entries(student)) {
+        if(key != 'joiningDate'){
+          let myTd = document.createElement('td');
+          console.log(value);
+          let textNode = document.createTextNode(value);
+          myTd.appendChild(textNode);
+          myTr.appendChild(myTd);
+        }
+    };
+    studentList.appendChild(myTr);
+  });
+}
+
+function updateTableStaff(){
+  staff.forEach(member =>{
+      let myTr = document.createElement('tr');
+
+      for(let [key, value] of Object.entries(member)) {
+        if(key != 'joiningDate'){
+          let myTd = document.createElement('td');
+          console.log(value);
+          let textNode = document.createTextNode(value);
+          myTd.appendChild(textNode);
+          myTr.appendChild(myTd);
+        }
+    };
+    staffList.appendChild(myTr);
+  });
+}
+
+
 
 function filterStudents(){
   //make an array with all table rows
