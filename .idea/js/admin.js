@@ -37,6 +37,8 @@ function toggleStaffAdd(){
   views[4].style.display="block";
 }
 
+
+//Constant variables
 const studentList = document.querySelector("#all-students");
 const staffList = document.querySelector("#all-staff");
 const students = [];
@@ -56,7 +58,10 @@ function appendStudent(){
     "email": document.getElementById('email-student').value
   };
 
+  //Add the student to the students array
   students.push(student);
+
+  //update the student table
   updateTableStudents();
 
   //switch back to the student list view
@@ -80,7 +85,11 @@ function appendStaff(){
     "joiningDate": document.getElementById('joining-date-staff').value,
     "email": document.getElementById('email-staff').value
   };
+
+  //add the member to the staff array
   staff.push(member);
+
+  //update the staff table
   updateTableStaff();
 
   //toggle the staff view and reset the form to a blank state
@@ -89,35 +98,54 @@ function appendStaff(){
 }
 
 function updateTableStudents(){
+  //Use a forEach function to reduce the amount of lines of code needed to add a student to the list
   students.forEach(student =>{
+
+      //Create a tr element to add all td elements to
       let myTr = document.createElement('tr');
 
+      //Create a td element for every value in a student Object (not joiningDate, which is irrelevant for the table)
       for(let [key, value] of Object.entries(student)) {
         if(key != 'joiningDate'){
           let myTd = document.createElement('td');
-          console.log(value);
           let textNode = document.createTextNode(value);
+
+          //add the textNode to the td
           myTd.appendChild(textNode);
+
+          //add the td to the tr
           myTr.appendChild(myTd);
         }
     };
+
+      //add the tr to the table
     studentList.appendChild(myTr);
   });
 }
 
 function updateTableStaff(){
+
+  //Use a forEach function to reduce the amount of lines of code needed to add a member to the list
   staff.forEach(member =>{
+    //Create a tr element to add all td elements to
       let myTr = document.createElement('tr');
 
+    //Create a td element for every value in a member Object (not joiningDate, which is irrelevant for the table)
       for(let [key, value] of Object.entries(member)) {
         if(key != 'joiningDate'){
           let myTd = document.createElement('td');
           console.log(value);
           let textNode = document.createTextNode(value);
+
+          //add the textNode to the td
           myTd.appendChild(textNode);
+
+          //add the td to the tr
           myTr.appendChild(myTd);
         }
     };
+
+    //add the tr to the table
     staffList.appendChild(myTr);
   });
 }
@@ -132,23 +160,19 @@ function filterStudents(){
   var selectDepartment = document.getElementById('info-bar-student-departments').options[document.getElementById('info-bar-student-departments').selectedIndex].text;
   var selectSemester = document.getElementById('info-bar-student-semesters').options[document.getElementById('info-bar-student-semesters').selectedIndex].text
 
-  console.log(selectSemester);
-  console.log(selectDepartment);
+
 
   //check to see if the rows match the filter
   for(let i = 1; i < tr.length; i++){
     let tdDepartment =  tr[i].getElementsByTagName('td')[5].innerHTML;
     let studentJoinDate = new Date(students[i-1].joiningDate);
     let month = studentJoinDate.getMonth()+1;
-    console.log(studentJoinDate);
     let semester;
     if(month >=10 || month <= 3){
       semester = 'Winter';
     }else if(month >= 4 || month <= 9){
       semester = 'Summer'
     }
-    console.log(tdDepartment);
-    console.log(semester);
     if(tdDepartment != selectDepartment || semester != selectSemester){
       //hide the table rows that don't match the filters
       tr[i].style.display = 'none';
